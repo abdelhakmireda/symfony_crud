@@ -6,6 +6,8 @@
         <div class="content">
             <img src="{{article.image}}"  alt="">
             {{article.content | raw }}
+            <a href="{{path('blog')}}" class="btn btn-primary"> lire la suite</a>
+        
         </div>
     </article>
 {% endblock %}

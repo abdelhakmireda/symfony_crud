@@ -67,4 +67,11 @@ class BlogController extends AbstractController
      { 
          return $this->render('blog/show.html.twig',['article'=>$article]);
      }
+     /**
+     * @Route("/blog/hadhhad",name="blog_showw")
+     */
+     public function showw(Article $article)
+     { 
+         return $this->render('blog/show.html.twig',['article'=>$article]);
+     }
 }

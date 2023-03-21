@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h1>Tableau de données</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Image</th>
+        <th>Category</th>
+        <th>Created At</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for lkhazris in lkhazri %}
+        <tr>
+          <td>{{ lkhazris.id }}</td>
+          <td>{{ lkhazris.title }}</td>
+          <td>{{ lkhazris.content }}</td>
+          <td>{{ lkhazris.image }}</td>
+          <td>{{ lkhazris.category.title}}</td>
+          <td>{{ lkhazris.createAt | date('d-m-Y')}} à {{lkhazris.createAt | date('H:i') }}</td>
+          <td>
+          <a href="{{path('blog_edit',{'id': lkhazris.id})}}" class="btn btn-primary"> Modifier</a>
+           
+            <a href="">Supprimer</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

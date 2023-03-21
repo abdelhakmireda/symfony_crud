@@ -68,10 +68,24 @@ class BlogController extends AbstractController
          return $this->render('blog/show.html.twig',['article'=>$article]);
      }
      /**
-     * @Route("/blog/hadhhad",name="blog_showw")
+     * @Route("/blog/showed",name="blog_showw")
      */
      public function showw(Article $article)
      { 
          return $this->render('blog/show.html.twig',['article'=>$article]);
      }
+     /**
+     * @Route("/affiche/{id}",name="blog_affiche")
+     */
+    public function affiche($id=null,ArticleRepository $artRepo=null)
+    { 
+        $ddd=$artRepo->findAll();
+     
+        return $this->render('blog/affiche.html.twig' ,[
+            
+            'lkhazri'=>$ddd
+       
+        ]);
+    }
+
 }
